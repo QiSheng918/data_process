@@ -1,0 +1,46 @@
+t=processdata.t;
+
+xb=processdata.xb;
+yb=processdata.yb;
+zb=processdata.zb;
+xt=processdata.xt;
+yt=processdata.yt;
+zt=processdata.zt;
+[m,n]=size(t);
+last_value=0;
+xb_=[];
+yb_=[];
+xt_=[];
+yt_=[];
+zt_=[];
+% hold on
+for i=1:m
+%     if abs(t(i))==5
+%    
+%         plot(y);
+%         x=[];
+%         y=[];
+%     end
+    if t(i)==5
+   
+%         plot(y);
+        xb_=[xb_ xb(i)];
+        yb_=[yb_ yb(i)];
+        xt_=[xt_ xt(i)];
+        yt_=[yt_ yt(i)];
+%         y=[];
+        zt_=[zt_ zt(i)];
+    end
+%     x=[x t(i)];
+%     y=[y zt(i)];
+%     last_value=t(i);
+end
+hold on
+legend('xb',"yb","xt","yt","zt")
+plot(xb_);
+plot(yb_);
+plot(xt_);
+plot(yt_);
+plot(zt_);
+
+hold off
